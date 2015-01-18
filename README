@@ -1,3 +1,5 @@
+Live website: http://stephenrparsons.github.io/layered-dataset-viewer/
+
 Inspired by a need to better understand how ancient manuscripts physically degrade over time, we developed this tool to visualize layered sets of image data. Multiple layers, or photographs of the same object, can be viewed simultaneously.
 
 Previously when observing changes in between image layers, it was necessary to flip entirely between images. With only two layers, some side-by-side comparison is useful through a slider interface such as this one: http://www.abc.net.au/news/specials/typhoon-haiyan-photos-before-after/ However, this useful form of direct comparison was not possible with three or more layers.
