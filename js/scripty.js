@@ -24,6 +24,7 @@ addImageButton.addEventListener('click', handleAddImage, false);
 $(window).resize(function() {
     setLargeImage(images[backgroundImage][1]);
     setFlashlightImage(images[flashlightImage][1]);
+    canvas.clear();
     draw();
 });
 
@@ -55,6 +56,7 @@ function setLargeImage(url) {
     });
     xOffset = $('#wrapper').width()/2;;
     yOffset = getImageHeight(url)/2;
+    canvas.clear();
     draw();
 }
 
@@ -74,6 +76,7 @@ function setFlashlightImage(url) {
         canvas.add(img).setActiveObject(img);
         setLargeImage(images[backgroundImage][1]);
     });
+    canvas.clear();
     draw();
 }
 
