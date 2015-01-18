@@ -20,12 +20,16 @@ function draw() {
 var addImageButton = document.getElementById('addImage');
 addImageButton.addEventListener('click', handleAddImage, false);
 
-function setOffsets(url) {
+function getImageWidth(url) {
     var img = new Image();
     img.src = images[backgroundImage][1];
-    console.log('->', img.width);
-    xOffset = img.width / 2;
-    yOffset = img.height / 2;
+    return img.width;
+}
+
+function getImageHeight(url) {
+  var img = new Image();
+  img.src = images[backgroundImage][1];
+  return img.height;
 }
 
 //make this not two prompts
@@ -39,15 +43,17 @@ function setLargeImage(url) {
     canvas.setBackgroundImage(url, canvas.renderAll.bind(canvas), {
         // Needed to position backgroundImage at top left corner
         originX: 'left',
-        originY: 'top'
+        originY: 'top',
+        left: ($('#wrapper').width() - getImageWidth(images[backgroundImage][1]))/2,                                      
     });
-    setOffsets(url);
+    xOffset = $('#wrapper').width()/2;;
+    yOffset = getImageHeight(url)/2;
 }
 
 function setFlashlightImage(url) {
     fabric.Image.fromURL(url, function (img) {
         img.scale(1).set({
-            left: 0,
+            left: ($('#wrapper').width() - getImageWidth(images[flashlightImage][1]))/2,
             top: 0,
             hasControls: false,
             hasBorders: false,
