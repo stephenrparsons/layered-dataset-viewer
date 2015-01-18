@@ -9,6 +9,7 @@ var xOffset = 0;
 var yOffset = 0;
 var flashlightImage = 0;
 var backgroundImage = 0;
+var circle = true;
 
 function draw() {
     canvas.setWidth($('#wrapper').width());
@@ -60,7 +61,10 @@ function setFlashlightImage(url) {
             lockMovementX: true,
             lockMovementY: true,
             clipTo: function (ctx) {
-                ctx.arc(x - xOffset, y - yOffset, radius, 0, Math.PI * 2, true);
+                if(circle === true)
+                    ctx.arc(x - xOffset, y - yOffset, radius, 0, Math.PI * 2, true);
+                else
+                    ctx.rect(x - xOffset, y - yOffset, radius, radius);
             }
         });
         canvas.add(img).setActiveObject(img);
@@ -69,8 +73,6 @@ function setFlashlightImage(url) {
 }
 
 // thumbnails?
-// ability to delete images?
-// other shapes like squares
 // sets of demo images built in
 // remove images
 
@@ -158,6 +160,12 @@ $(document).keydown(function (e) {
             // s
             backgroundImage = (backgroundImage - 1 + images.length) % images.length;
             setLargeImage(images[backgroundImage][1]);
+            break;
+
+        case 69:
+            // e               //circle/square toggle
+            circle = !circle;
+            draw();
             break;
 
         default:
