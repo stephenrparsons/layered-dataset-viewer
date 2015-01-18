@@ -91,26 +91,34 @@ $(window).load(function () {
     // sets of demo images built in, cycle through them
 
     var imageSet = [
-	['fun', [
-            ['Mountains', 'http://i.imgur.com/6ExMglc.jpg'],
-            ['Flocka', 'http://dmjuice.com/wp-content/uploads/2014/04/waka.jpg'],
-            ['Nick', 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/10636403_10153455635518465_4958444602555247243_o.jpg']
-	]],
+	// ['fun', [
+        //     ['Mountains', 'http://i.imgur.com/6ExMglc.jpg'],
+        //     ['Flocka', 'http://dmjuice.com/wp-content/uploads/2014/04/waka.jpg'],
+        //     ['Nick', 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/10636403_10153455635518465_4958444602555247243_o.jpg']
+	// ]],
 	['130', [
             ['1929', 'http://i.imgur.com/kZIxe1M.jpg'],
             ['1962', 'http://i.imgur.com/hGn3zZY.jpg'],
             ['2003', 'http://i.imgur.com/sMnwUl5.jpg'],
             ['2010', 'http://i.imgur.com/OpH6k13.jpg']
 	]],
-	['142', [
-            ['1962', 'http://i.imgur.com/VupvBdX.jpg'],
-            ['2003', 'http://i.imgur.com/IoRDdeq.jpg'],
-            ['2010', 'http://i.imgur.com/5P5LMoZ.jpg']
-	]],
+	// ['142', [
+        //     ['1962', 'http://i.imgur.com/VupvBdX.jpg'],
+        //     ['2003', 'http://i.imgur.com/IoRDdeq.jpg'],
+        //     ['2010', 'http://i.imgur.com/5P5LMoZ.jpg']
+	// ]],
 	['143', [
             ['1962', 'http://i.imgur.com/IzscS6I.jpg'],
             ['2003', 'http://i.imgur.com/ss6dPpx.jpg'],
             ['2010', 'http://i.imgur.com/2EAi185.jpg']
+	]],
+	['eye', [
+	    ['manual', 'http://i.imgur.com/yYEh4pH.jpg'],
+	    ['training', 'http://i.imgur.com/I7kydTB.jpg']
+	]],
+	['stroke', [
+	    ['left', 'http://i.imgur.com/WIZmJn6.jpg'],
+	    ['right', 'http://i.imgur.com/BYY2sA3.jpg']
 	]]
     ];
 
