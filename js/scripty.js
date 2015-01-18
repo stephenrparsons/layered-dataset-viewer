@@ -9,11 +9,11 @@ var xOffset = 0;
 var yOffset = 0;
 var flashlightImage = 0;
 var backgroundImage = 0;
+var imageSetIndex = 1;
 
 function draw() {
     canvas.setWidth($('#wrapper').width());
     canvas.setHeight($('#wrapper').height());
-    canvas.calcOffset();
     canvas.renderAll();
 }
 
@@ -98,7 +98,7 @@ var imageSet = [
     ]]
 ];
 
-var images = imageSet[3][1];
+var images = imageSet[imageSetIndex][1];
 
 //Need to think about what happens when images are different sizes
 setFlashlightImage(images[flashlightImage][1]);
@@ -157,6 +157,26 @@ $(document).keydown(function (e) {
         case 83:
             // s
             backgroundImage = (backgroundImage - 1 + images.length) % images.length;
+            setLargeImage(images[backgroundImage][1]);
+            break;
+
+        case 88:              // x
+            canvas.clear();
+            imageSetIndex = (imageSetIndex + 1) % imageSet.length;
+            images = imageSet[imageSetIndex][1];
+            backgroundImage = 0;
+            flashlightImage = 0;
+            setFlashlightImage(images[flashlightImage][1]);
+            setLargeImage(images[backgroundImage][1]);
+            break;
+
+        case 90:              // z
+            canvas.clear();
+            imageSetIndex = (imageSetIndex + imageSet.length - 1) % imageSet.length;
+            images = imageSet[imageSetIndex][1];
+            backgroundImage = 0;
+            flashlightImage = 0;
+            setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
 
