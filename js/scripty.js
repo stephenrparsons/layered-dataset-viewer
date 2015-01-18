@@ -118,13 +118,18 @@ $(window).load(function () {
 	    ['manual', 'http://i.imgur.com/yYEh4pH.jpg'],
 	    ['training', 'http://i.imgur.com/I7kydTB.jpg']
 	]],
-	['stroke', [
-	    ['left', 'http://i.imgur.com/WIZmJn6.jpg'],
-	    ['right', 'http://i.imgur.com/BYY2sA3.jpg']
-	]],
+	// ['stroke', [
+	//     ['left', 'http://i.imgur.com/WIZmJn6.jpg'],
+	//     ['right', 'http://i.imgur.com/BYY2sA3.jpg']
+	// ]],
 	['spine', [
 	    ['before', 'http://i.imgur.com/HmuYoTQ.jpg'],
 	    ['after', 'http://i.imgur.com/EXmkZIo.jpg']
+	]],
+	['brain', [
+	    ['A', 'http://i.imgur.com/ZXtiAvu.jpg'],
+	    ['C', 'http://i.imgur.com/i4e2o28.jpg'],
+	    ['B', 'http://i.imgur.com/FMaaBJ8.jpg']
 	]]
     ];
 
