@@ -20,6 +20,13 @@ function draw() {
 var addImageButton = document.getElementById('addImage');
 addImageButton.addEventListener('click', handleAddImage, false);
 
+// could be used to handle window resize event
+$(window).resize(function() {
+    setLargeImage(images[backgroundImage][1]);
+    setFlashlightImage(images[flashlightImage][1]);
+    draw();
+});
+
 function getImageWidth(url) {
     var img = new Image();
     img.src = images[backgroundImage][1];
@@ -48,6 +55,7 @@ function setLargeImage(url) {
     });
     xOffset = $('#wrapper').width()/2;;
     yOffset = getImageHeight(url)/2;
+    draw();
 }
 
 function setFlashlightImage(url) {
@@ -66,13 +74,13 @@ function setFlashlightImage(url) {
         canvas.add(img).setActiveObject(img);
         setLargeImage(images[backgroundImage][1]);
     });
+    draw();
 }
 
-// thumbnails?
+// make it a library for embed
+// center on window resize
 // ability to delete images?
-// other shapes like squares
-// sets of demo images built in
-// remove images
+// sets of demo images built in, cycle through them
 
 var imageSet = [
     ['fun', [
