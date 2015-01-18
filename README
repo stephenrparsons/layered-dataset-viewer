@@ -1,0 +1,14 @@
+Inspired by a need to better understand how ancient manuscripts physically degrade over time, we developed this tool to visualize layered sets of image data. Multiple layers, or photographs of the same object, can be viewed simultaneously.
+
+Previously when observing changes in between image layers, it was necessary to flip entirely between images. With only two layers, some side-by-side comparison is useful through a slider interface such as this one: http://www.abc.net.au/news/specials/typhoon-haiyan-photos-before-after/ However, this useful form of direct comparison was not possible with three or more layers.
+
+This novel interface allows a user to visualize changes in between any number of layers easily and without the need of complex software tools such as Adobe Photoshop. The "flashlight" concept allows for intuitive viewing of layered sets of images.
+
+Some potential uses for this interface include:
+
+-Viewing MRI, X-Ray, or other scans and their changes over time
+-Observing changes in skin legions over time
+-Observing large community changes (e.g. development projects, natural disasters) through aerial photography
+-Observing changes in manuscript pages as they degrade over time
+-Viewing multispectral image sets (e.g. comparing multiple spectra of the same image to each other)
+-Intuitive observation of changes in image sets from time or other forces
