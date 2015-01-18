@@ -18,8 +18,8 @@ $(window).load(function () {
 	canvas.setHeight($('#wrapper').height());
 	canvas.calcOffset();
 	canvas.renderAll();
-  $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
-  $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
+	$('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+	$('#backgroundText').text('Background: ' + images[backgroundImage][0]);
     }
 
     var addImageButton = document.getElementById('addImage');
@@ -130,6 +130,21 @@ $(window).load(function () {
 	    ['A', 'http://i.imgur.com/ZXtiAvu.jpg'],
 	    ['C', 'http://i.imgur.com/i4e2o28.jpg'],
 	    ['B', 'http://i.imgur.com/FMaaBJ8.jpg']
+	]],
+	['helen', [
+	    ['a', 'http://i.imgur.com/VoEbsZU.jpg'],
+	    ['b', 'http://i.imgur.com/WXTwlqD.jpg'],
+	    ['c', 'http://i.imgur.com/tDecIgE.jpg'],
+	    ['d', 'http://i.imgur.com/IRcqoyw.jpg'],
+	    ['e', 'http://i.imgur.com/Wzx7zBP.jpg'],
+	    ['f', 'http://i.imgur.com/1qXcTUQ.jpg'],
+	    ['g', 'http://i.imgur.com/xIKH6Fu.jpg'],
+	    ['h', 'http://i.imgur.com/61lbDD3.jpg'],
+	    ['i', 'http://i.imgur.com/kDIsPlR.jpg'],
+	    ['j', 'http://i.imgur.com/i4zGiQX.jpg'],
+	    ['k', 'http://i.imgur.com/fjfLnPc.jpg'],
+	    ['l', 'http://i.imgur.com/kwJEBkL.jpg'],
+	    ['m', 'http://i.imgur.com/EN56NOc.jpg']
 	]]
     ];
 
@@ -162,10 +177,10 @@ $(window).load(function () {
 
     
     $(canvas.wrapperEl).on('click', function() {
-      flashlightImage = (flashlightImage + 1) % images.length;
-      setFlashlightImage(images[flashlightImage][1]);
-      $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
-      draw();
+	flashlightImage = (flashlightImage + 1) % images.length;
+	setFlashlightImage(images[flashlightImage][1]);
+	$('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+	draw();
     });
 
     $(document).keydown(function (e) {
