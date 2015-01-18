@@ -87,4 +87,12 @@ ul li:hover ul {
 }
 #addImage {
 }
+
+#infoText {
+  font: bold 12px/18px sans-serif;
+  color: #ffffff;
+  position: fixed;
+  left: 1%;
+  bottom: 1%;
+  line-height: 0.75em;
 }

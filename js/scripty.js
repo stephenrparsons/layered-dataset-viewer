@@ -18,6 +18,8 @@ $(window).load(function () {
 	canvas.setHeight($('#wrapper').height());
 	canvas.calcOffset();
 	canvas.renderAll();
+  $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+  $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
     }
 
     var addImageButton = document.getElementById('addImage');
@@ -150,6 +152,7 @@ $(window).load(function () {
             // a
             flashlightImage = (flashlightImage + images.length - 1) % images.length;
             setFlashlightImage(images[flashlightImage][1]);
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
             break;
 
         case 39:
@@ -158,6 +161,7 @@ $(window).load(function () {
             // d
             flashlightImage = (flashlightImage + 1) % images.length;
             setFlashlightImage(images[flashlightImage][1]);
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
             break;
 
         case 38:
@@ -166,6 +170,7 @@ $(window).load(function () {
             // w
             backgroundImage = (backgroundImage + 1) % images.length;
             setLargeImage(images[backgroundImage][1]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             break;
 
         case 40:
@@ -174,14 +179,18 @@ $(window).load(function () {
             // s
             backgroundImage = (backgroundImage - 1 + images.length) % images.length;
             setLargeImage(images[backgroundImage][1]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             break;
 
         case 88:              // x
             canvas.clear();
             imageSetIndex = (imageSetIndex + 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
+            $("#menuImages").empty();
             backgroundImage = 0;
             flashlightImage = 1;
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
@@ -190,8 +199,11 @@ $(window).load(function () {
             canvas.clear();
             imageSetIndex = (imageSetIndex + imageSet.length - 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
+            $("#menuImages").empty();
             backgroundImage = 0;
             flashlightImage = 1;
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
