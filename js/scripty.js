@@ -10,10 +10,12 @@ var yOffset = 0;
 var flashlightImage = 0;
 var backgroundImage = 0;
 var imageSetIndex = 1;
+var circle = true;
 
 function draw() {
     canvas.setWidth($('#wrapper').width());
     canvas.setHeight($('#wrapper').height());
+    canvas.calcOffset();
     canvas.renderAll();
 }
 
@@ -70,7 +72,10 @@ function setFlashlightImage(url) {
             lockMovementX: true,
             lockMovementY: true,
             clipTo: function (ctx) {
-                ctx.arc(x - xOffset, y - yOffset, radius, 0, Math.PI * 2, true);
+                if(circle === true)
+                    ctx.arc(x - xOffset, y - yOffset, radius, 0, Math.PI * 2, true);
+                else
+                    ctx.rect(x - xOffset, y - yOffset, radius, radius);
             }
         });
         canvas.add(img).setActiveObject(img);
@@ -189,6 +194,12 @@ $(document).keydown(function (e) {
             flashlightImage = 0;
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
+            break;
+
+        case 69:
+            // e               //circle/square toggle
+            circle = !circle;
+            draw();
             break;
 
         default:
