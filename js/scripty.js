@@ -18,6 +18,8 @@ $(window).load(function () {
 	canvas.setHeight($('#wrapper').height());
 	canvas.calcOffset();
 	canvas.renderAll();
+  $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+  $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
     }
 
     var addImageButton = document.getElementById('addImage');
@@ -91,26 +93,38 @@ $(window).load(function () {
     // sets of demo images built in, cycle through them
 
     var imageSet = [
-	['fun', [
-            ['Mountains', 'http://i.imgur.com/6ExMglc.jpg'],
-            ['Flocka', 'http://dmjuice.com/wp-content/uploads/2014/04/waka.jpg'],
-            ['Nick', 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/10636403_10153455635518465_4958444602555247243_o.jpg']
-	]],
+	// ['fun', [
+        //     ['Mountains', 'http://i.imgur.com/6ExMglc.jpg'],
+        //     ['Flocka', 'http://dmjuice.com/wp-content/uploads/2014/04/waka.jpg'],
+        //     ['Nick', 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/10636403_10153455635518465_4958444602555247243_o.jpg']
+	// ]],
 	['130', [
             ['1929', 'http://i.imgur.com/kZIxe1M.jpg'],
             ['1962', 'http://i.imgur.com/hGn3zZY.jpg'],
             ['2003', 'http://i.imgur.com/sMnwUl5.jpg'],
             ['2010', 'http://i.imgur.com/OpH6k13.jpg']
 	]],
-	['142', [
-            ['1962', 'http://i.imgur.com/VupvBdX.jpg'],
-            ['2003', 'http://i.imgur.com/IoRDdeq.jpg'],
-            ['2010', 'http://i.imgur.com/5P5LMoZ.jpg']
-	]],
+	// ['142', [
+        //     ['1962', 'http://i.imgur.com/VupvBdX.jpg'],
+        //     ['2003', 'http://i.imgur.com/IoRDdeq.jpg'],
+        //     ['2010', 'http://i.imgur.com/5P5LMoZ.jpg']
+	// ]],
 	['143', [
             ['1962', 'http://i.imgur.com/IzscS6I.jpg'],
             ['2003', 'http://i.imgur.com/ss6dPpx.jpg'],
             ['2010', 'http://i.imgur.com/2EAi185.jpg']
+	]],
+	['eye', [
+	    ['manual', 'http://i.imgur.com/yYEh4pH.jpg'],
+	    ['training', 'http://i.imgur.com/I7kydTB.jpg']
+	]],
+	['stroke', [
+	    ['left', 'http://i.imgur.com/WIZmJn6.jpg'],
+	    ['right', 'http://i.imgur.com/BYY2sA3.jpg']
+	]],
+	['spine', [
+	    ['before', 'http://i.imgur.com/HmuYoTQ.jpg'],
+	    ['after', 'http://i.imgur.com/EXmkZIo.jpg']
 	]]
     ];
 
@@ -150,6 +164,7 @@ $(window).load(function () {
             // a
             flashlightImage = (flashlightImage + images.length - 1) % images.length;
             setFlashlightImage(images[flashlightImage][1]);
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
             break;
 
         case 39:
@@ -158,6 +173,7 @@ $(window).load(function () {
             // d
             flashlightImage = (flashlightImage + 1) % images.length;
             setFlashlightImage(images[flashlightImage][1]);
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
             break;
 
         case 38:
@@ -166,6 +182,7 @@ $(window).load(function () {
             // w
             backgroundImage = (backgroundImage + 1) % images.length;
             setLargeImage(images[backgroundImage][1]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             break;
 
         case 40:
@@ -174,14 +191,18 @@ $(window).load(function () {
             // s
             backgroundImage = (backgroundImage - 1 + images.length) % images.length;
             setLargeImage(images[backgroundImage][1]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             break;
 
         case 88:              // x
             canvas.clear();
             imageSetIndex = (imageSetIndex + 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
+            $("#menuImages").empty();
             backgroundImage = 0;
             flashlightImage = 1;
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
@@ -190,8 +211,11 @@ $(window).load(function () {
             canvas.clear();
             imageSetIndex = (imageSetIndex + imageSet.length - 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
+            $("#menuImages").empty();
             backgroundImage = 0;
             flashlightImage = 1;
+            $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+            $('#backgroundText').text('Background: ' + images[backgroundImage][0]);
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
