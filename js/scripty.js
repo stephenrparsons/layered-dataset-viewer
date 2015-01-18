@@ -58,7 +58,7 @@ function setFlashlightImage(url) {
             }
         });
         canvas.add(img).setActiveObject(img);
-        setLargeImage(images[1][1]);
+        setLargeImage(images[backgroundImage][1]);
     });
 }
 
