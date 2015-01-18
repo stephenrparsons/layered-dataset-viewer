@@ -35,7 +35,7 @@ function handleAddImage(e) {
     if (name && url) images.push([name, url]);
 }
 
-function setBackgroundImage(url) {
+function setLargeImage(url) {
     canvas.setBackgroundImage(url, canvas.renderAll.bind(canvas), {
         // Needed to position backgroundImage at top left corner
         originX: 'left',
@@ -58,7 +58,7 @@ function setFlashlightImage(url) {
             }
         });
         canvas.add(img).setActiveObject(img);
-        setBackgroundImage(images[1][1]);
+        setLargeImage(images[1][1]);
     });
 }
 
@@ -143,7 +143,7 @@ $(document).keydown(function (e) {
         case 87:
             // w
             backgroundImage = (backgroundImage + 1) % images.length;
-            setBackgroundImage(images[backgroundImage][1]);
+            setLargeImage(images[backgroundImage][1]);
             break;
 
         case 40:
@@ -151,7 +151,7 @@ $(document).keydown(function (e) {
         case 83:
             // s
             backgroundImage = (backgroundImage - 1 + images.length) % images.length;
-            setBackgroundImage(images[backgroundImage][1]);
+            setLargeImage(images[backgroundImage][1]);
             break;
 
         default:
@@ -178,7 +178,8 @@ function updateMenu() {
                 //console.log(s);
                 for (var i = 0; i < images.length; i++) {
                     if (s == images[i][0]) {
-                        setBackgroundImage(images[i][1]);
+                        setLargeImage(images[i][1]);
+                        backgroundImage = i;
                         return;
                     }
                 }
