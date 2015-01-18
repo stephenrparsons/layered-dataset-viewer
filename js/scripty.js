@@ -119,6 +119,10 @@ $(window).load(function () {
 	['stroke', [
 	    ['left', 'http://i.imgur.com/WIZmJn6.jpg'],
 	    ['right', 'http://i.imgur.com/BYY2sA3.jpg']
+	]],
+	['spine', [
+	    ['before', 'http://i.imgur.com/HmuYoTQ.jpg'],
+	    ['after', 'http://i.imgur.com/EXmkZIo.jpg']
 	]]
     ];
 
