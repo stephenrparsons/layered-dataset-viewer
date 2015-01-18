@@ -2,12 +2,12 @@ var canvas = this.__canvas = new fabric.Canvas('cv');
 fabric.Object.prototype.transparentCorners = false;
 canvas.hoverCursor = 'arrow';
 
-var radius = 200;
+var radius = 50;
 var x = 0;
 var y = 0;
 var xOffset = 0;
 var yOffset = 0;
-var flashlightImage = 0;
+var flashlightImage = 1;
 var backgroundImage = 0;
 var imageSetIndex = 1;
 var circle = true;
@@ -58,7 +58,6 @@ function setLargeImage(url) {
     });
     xOffset = $('#wrapper').width()/2;;
     yOffset = getImageHeight(url)/2;
-    canvas.clear();
     draw();
 }
 
@@ -75,7 +74,7 @@ function setFlashlightImage(url) {
                 if(circle === true)
                     ctx.arc(x - xOffset, y - yOffset, radius, 0, Math.PI * 2, true);
                 else
-                    ctx.rect(x - xOffset, y - yOffset, radius, radius);
+                    ctx.rect(x - xOffset - radius, y - yOffset - radius, 2*radius, 2*radius);
             }
         });
         canvas.add(img).setActiveObject(img);
@@ -181,7 +180,7 @@ $(document).keydown(function (e) {
             imageSetIndex = (imageSetIndex + 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
             backgroundImage = 0;
-            flashlightImage = 0;
+            flashlightImage = 1;
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
@@ -191,7 +190,7 @@ $(document).keydown(function (e) {
             imageSetIndex = (imageSetIndex + imageSet.length - 1) % imageSet.length;
             images = imageSet[imageSetIndex][1];
             backgroundImage = 0;
-            flashlightImage = 0;
+            flashlightImage = 1;
             setFlashlightImage(images[flashlightImage][1]);
             setLargeImage(images[backgroundImage][1]);
             break;
