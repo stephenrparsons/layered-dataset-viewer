@@ -160,8 +160,15 @@ $(window).load(function () {
 	return false;
     });
 
+    
+    $(canvas.wrapperEl).on('click', function() {
+      flashlightImage = (flashlightImage + 1) % images.length;
+      setFlashlightImage(images[flashlightImage][1]);
+      $('#flashlightText').text('Flashlight: ' + images[flashlightImage][0]);
+      draw();
+    });
+
     $(document).keydown(function (e) {
-	console.log('clicked');
 	switch (e.which) {
         case 37:
             // left                  // flashlight back
